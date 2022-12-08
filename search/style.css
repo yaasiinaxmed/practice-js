@@ -84,9 +84,20 @@ body {
     font-size: 1.3em;
     border-left: 3px solid #0077ff;
     border-radius: 4px;
+    animation: pop 1s ease-in-out;
+}
+
+@keyframes pop {
+    from {
+      transform: translateY(-400px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .container .boxs .box:nth-of-type(even) {
     border-left: none;
     border-right: 3px solid #0077ff;
+    animation: pop 0.5s ease-in;
 }
