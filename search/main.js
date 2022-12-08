@@ -9,7 +9,7 @@ function searchItem() {
     const inputText = searchInput.value.toLowerCase();
 
     items.forEach(item => {
-        const itemText = item.textContent;
+        const itemText = item.firstChild.textContent;
 
         if (itemText.toLowerCase().indexOf(inputText) != - 1) {
             item.style.display = 'block';
