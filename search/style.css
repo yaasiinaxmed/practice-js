@@ -30,11 +30,24 @@ body {
 }
 
 .container .search-bar {
-    margin-top: 12px;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 12px auto;
+    width: 90%;
+    height: 35px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
+.container .search-bar input {
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.container .search-bar i {
+    padding: 10px;
+    background: linear-gradient(to bottom, #569be9, rgb(1, 1, 196));
+    color: white;
+}
