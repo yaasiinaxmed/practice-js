@@ -77,9 +77,13 @@ body {
 }
 
 .container .tabs #Server {
-    display: flex;
+    display: none;
 }
 
 .container .tabs #Version {
     display: none;
+}
+
+.container .tabs > div.active {
+    display: flex;
 }
