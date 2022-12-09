@@ -11,6 +11,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
     min-height: 100vh;
 }
 
+.box {
+    border: 2px solid red;
+    padding: 20px;
+}
+
+h2 {
+    background: red;
+    padding: 8px 14px;
+}
