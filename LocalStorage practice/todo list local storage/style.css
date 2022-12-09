@@ -34,14 +34,59 @@
     border-radius: 4px 0  0 4px;
 }
 
-.add span {
+.add button {
     width: 40px;
     height: 33px;
     background: orange;
+    border: none;
     font-size: 25px;
     color: #fff;
     text-align: center;
     line-height: 33px;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
+}
+
+.tasks {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 15px 20px;
+    margin: 0;
+}
+
+.tasks .todo {
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.tasks .todo > div {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tasks .todo i {
+    cursor: pointer;
+}
+
+.tasks .todo > div i {
+    color: #14db2e;
+}
+
+.tasks .todo > div span {
+    font-weight: 600;
+    color: #555;
+}
+
+.tasks .todo i:last-child {
+    color: red;
 }
