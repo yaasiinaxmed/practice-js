@@ -4,7 +4,7 @@ const containerTodo = document.querySelector(".tasks");
 
 const todolists = JSON.parse(localStorage.getItem("todo")) || [];
 
-const addTodo = (todoName, checkIco) => {
+const addTodo = (todoName) => {
     todolists.push({
         name: todoName,
     });
@@ -67,7 +67,7 @@ function checkIcons(checkIcon,name) {
         }
     });
 };
-
+ 
 function removeItems(removeIcon,todo) {
     removeIcon.addEventListener("click", () => {
         todo.remove();

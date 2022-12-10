@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container">
+       <header>
+          <!-- nav bar  -->
+          <nav class="nav">
+            <!-- logo img -->
+            <div class="logo">
+                <img src="./imgs/logo.png" alt="">
+            </div>
+            <!-- shopping cart icon -->
+            <div class="cart">
+                <iconify-icon icon="ic:round-shopping-cart"></iconify-icon>
+            </div>
+          </nav>
+       </header>
+        <!-- start page shopping cart -->
+        <div class="page-cart">
+            <div class="nav-cart">
+                <span>Products</span>
+                <span>Quantity</span>
+                <span>Subtotal</span>
+            </div>
+            <div class="products-cart">
+                <div class="product-cart">
+                    <img src="./imgs/product-1.jpg" alt="" class="img-cart">
+                    <div class="contianer-cart">
+                        <div class="detail">
+                            <small>T-shirt for men</small>
+                            <price>Price: $20</price>
+                            <a>remove</a>
+                        </div>
+                        <div class="counter">
+                            <div class="count-btn">-</div>
+                            <div class="count">10</div>
+                            <div class="count-btn">+</div>
+                        </div>
+                        <div class="total">$200</div>
+                    </div>
+                </div>
+              <div class="checkout">
+                <h3>Totol Amount : $600</h3>
+                <button class="btn-checkout">Checkout</button>
+             </div>
+           </div>
+        </div>
+        <!-- end page shopping cart -->
+        <!-- content page products -->
+        <main class="main">
+            <!-- title page -->
+            <div class="title">
+                <span>All Products</span>
+                <span>View Cart</span>
+            </div>
+            <!-- products container-->
+            <div class="products">
+                <!-- products -->
+                <div class="product">
+                    <img src="./imgs/product-1.jpg" alt="" class="img-pro">
+                    <div class="details">
+                        <span class="name-pro">T-shirts for men</span>
+                        <span class="price">$20</span>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <button class="btn">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./imgs/product-3.jpg" alt="" class="img-pro">
+                    <div class="details">
+                        <span class="name-pro">Shoes for men</span>
+                        <span class="price">$50</span>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <button class="btn">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./imgs/product-4.jpg" alt="" class="img-pro">
+                    <div class="details">
+                        <span class="name-pro">Trousers for men</span>
+                        <span class="price">$40</span>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <button class="btn">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./imgs/product-2.jpg" alt="" class="img-pro">
+                    <div class="details">
+                        <span class="name-pro">T-shirts for men</span>
+                        <span class="price">$15</span>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <button class="btn">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- cdn icon shopping cart -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <!-- javaScript -->
+    <script src="./main.js"></script>
+</body>
+</html>
