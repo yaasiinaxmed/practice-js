@@ -4,6 +4,7 @@ const stars = document.querySelectorAll(".stars i");
 const addCartBtn = document.querySelectorAll(".btn");
 const contianerProducts = document.querySelector(".products-cart");
 const totalAmount = document.querySelector(".checkout h3");
+const quantitiyItem = document.querySelector("#quantity");
 
 const products = JSON.parse(localStorage.getItem("product")) || [];
 
@@ -27,12 +28,13 @@ function starsIcon() {
     });
 };
 
-const addProduct = (img,name,price) => {
+const addProduct = (img,name,price,id) => {
     products.push(
         {
             img: img,
             name: name,
             price: price,
+            id: id,
         }
     );
 
@@ -79,24 +81,31 @@ const counter = (count_btns,count_text,price,total,product) => {
     });
 };
 
-const createElementCart = ({img,name,price}) => {
-    contianerProducts.innerHTML += 
-    `<div class="product-cart">
-    <img src="${img}" alt="" class="img-cart">
-    <div class="contianer-cart">
-        <div class="detail">
-            <small>${name}</small>
-            <price>Price: $ <span class="price-cart">${price}</span></price>
-            <a>remove</a>
+const createElementCart = ({img,name,price,id}) => {
+    let isInCart = products.filter(product => product.id === products.id).length > 0;
+   
+    if(isInCart) {
+        contianerProducts.insertAdjacentHTML("afterbegin",  
+        `<div class="product-cart">
+        <input type="hidden" id="quantity" value="${id}">
+        <img src="${img}" alt="" class="img-cart">
+        <div class="contianer-cart">
+            <div class="detail">
+                <small>${name}</small>
+                <price>Price: $ <span class="price-cart">${price}</span></price>
+                <a>remove</a>
+            </div>
+            <div class="counter">
+                <div class="count-btn">-</div>
+                <div class="count">${correntNumber}</div>
+                <div class="count-btn">+</div>
+            </div>
+            <div>$<span class="total">${price}</span></div>
         </div>
-        <div class="counter">
-            <div class="count-btn">-</div>
-            <div class="count">${correntNumber}</div>
-            <div class="count-btn">+</div>
-        </div>
-        <div>$<span class="total">${price}</span></div>
-    </div>
-   </div>`;
+       </div>`);
+    } else {
+        return;
+    }
 
    
 
@@ -127,10 +136,13 @@ const addCar = () => {
             const countNum = document.querySelector(".count");
 
             const NewProduct = addProduct(
-                img.src,
+                img.getAttribute("src"),
                 name.innerText,
                 price.innerText,
+                quantitiyItem.value,
             );
+
+            
 
             createElementCart(NewProduct);
 
