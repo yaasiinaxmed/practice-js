@@ -66,10 +66,23 @@
     line-height: 55px;
     cursor: pointer;
     transition: 0.3s;
+    position: relative;
 }
 
 .container header .nav .cart:hover {
     background: #daebff;
+}
+
+.container header .nav .cart::before {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #0fe60f;
+    border-radius: 50%;
+    left: -4px;
+    top: 4px;
+    display: none;
 }
 
 /* content page style */
@@ -77,6 +90,10 @@
 .container .main {
     width: 60%;
     margin: 12px auto 0;
+}
+
+.container.active .main {
+    display: none;
 }
 
 .container .main .title {
@@ -132,6 +149,10 @@
     padding: 6px 0;
 }
 
+.container .main .products .product .details .stars i {
+    cursor: pointer;
+}
+
 .container .main .products  .product .details .btn {
     width: 100%;
     padding: 6px;
@@ -152,6 +173,10 @@
     width: 60%;
     margin: 0 auto;
     display: none;
+}
+
+.container.active .page-cart {
+    display: block;
 }
 
 .container .page-cart .nav-cart {
@@ -221,7 +246,6 @@
 .container .page-cart .products-cart .product-cart .contianer-cart .counter .count {
     width: 30px;
     height: 30px;
-    border: 1px solid #555;
     color: #555;
     text-align: center;
     line-height: 30px;
