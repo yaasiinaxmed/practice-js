@@ -4,6 +4,7 @@ const stars = document.querySelectorAll(".stars i");
 const addCartBtn = document.querySelectorAll(".btn");
 const contianerProducts = document.querySelector(".products-cart");
 const totalAmount = document.querySelector(".checkout h3");
+const quantitiyItem = document.querySelector("#quantity");
 
 const products = JSON.parse(localStorage.getItem("product")) || [];
 
@@ -27,7 +28,7 @@ function starsIcon() {
     });
 };
 
-const addProduct = (img,name,price) => {
+const addProduct = (img,name,price,id) => {
     products.push(
         {
             img: img,
@@ -80,6 +81,7 @@ const counter = (count_btns,count_text,price,total,product) => {
 };
 
 const createElementCart = ({img,name,price}) => {
+
     contianerProducts.innerHTML += 
     `<div class="product-cart">
     <img src="${img}" alt="" class="img-cart">
@@ -96,9 +98,7 @@ const createElementCart = ({img,name,price}) => {
         </div>
         <div>$<span class="total">${price}</span></div>
     </div>
-   </div>`;
-
-   
+   </div>`;   
 
    document.querySelectorAll(".product-cart").forEach(product => {
       const removeProduct = product.querySelector("a");
@@ -123,14 +123,17 @@ const addCar = () => {
             const parentElement = btn.parentElement.parentElement;
             const img = parentElement.querySelector("img");
             const price = parentElement.querySelector(".price");
-            const name = document.querySelector(".name-pro");
-            const countNum = document.querySelector(".count");
+            const name = parentElement.querySelector(".name-pro");
+            // const quantity = document.querySelector(".count");
 
             const NewProduct = addProduct(
-                img.src,
+                img.getAttribute("src"),
                 name.innerText,
                 price.innerText,
+                // quantity.innerText,
             );
+
+            
 
             createElementCart(NewProduct);
 
