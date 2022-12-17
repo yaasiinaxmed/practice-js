@@ -34,7 +34,6 @@ const addProduct = (img,name,price,id) => {
             img: img,
             name: name,
             price: price,
-            id: id,
         }
     );
 
@@ -81,33 +80,25 @@ const counter = (count_btns,count_text,price,total,product) => {
     });
 };
 
-const createElementCart = ({img,name,price,id}) => {
-    let isInCart = products.filter(product => product.id === products.id).length > 0;
-   
-    if(isInCart) {
-        contianerProducts.insertAdjacentHTML("afterbegin",  
-        `<div class="product-cart">
-        <input type="hidden" id="quantity" value="${id}">
-        <img src="${img}" alt="" class="img-cart">
-        <div class="contianer-cart">
-            <div class="detail">
-                <small>${name}</small>
-                <price>Price: $ <span class="price-cart">${price}</span></price>
-                <a>remove</a>
-            </div>
-            <div class="counter">
-                <div class="count-btn">-</div>
-                <div class="count">${correntNumber}</div>
-                <div class="count-btn">+</div>
-            </div>
-            <div>$<span class="total">${price}</span></div>
-        </div>
-       </div>`);
-    } else {
-        return;
-    }
+const createElementCart = ({img,name,price}) => {
 
-   
+    contianerProducts.innerHTML += 
+    `<div class="product-cart">
+    <img src="${img}" alt="" class="img-cart">
+    <div class="contianer-cart">
+        <div class="detail">
+            <small>${name}</small>
+            <price>Price: $ <span class="price-cart">${price}</span></price>
+            <a>remove</a>
+        </div>
+        <div class="counter">
+            <div class="count-btn">-</div>
+            <div class="count">${correntNumber}</div>
+            <div class="count-btn">+</div>
+        </div>
+        <div>$<span class="total">${price}</span></div>
+    </div>
+   </div>`;   
 
    document.querySelectorAll(".product-cart").forEach(product => {
       const removeProduct = product.querySelector("a");
@@ -132,14 +123,14 @@ const addCar = () => {
             const parentElement = btn.parentElement.parentElement;
             const img = parentElement.querySelector("img");
             const price = parentElement.querySelector(".price");
-            const name = document.querySelector(".name-pro");
-            const countNum = document.querySelector(".count");
+            const name = parentElement.querySelector(".name-pro");
+            // const quantity = document.querySelector(".count");
 
             const NewProduct = addProduct(
                 img.getAttribute("src"),
                 name.innerText,
                 price.innerText,
-                quantitiyItem.value,
+                // quantity.innerText,
             );
 
             

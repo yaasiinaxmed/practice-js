@@ -1,5 +1,7 @@
 const cartCounter = document.querySelector(".cart__counter");
 const cartDOM = document.querySelector(".cart__items");
+const totalCounter = document.querySelector("#total__counter");
+const totalCost = document.querySelector(".total__cost");
 
 const addToCartBtn = document.querySelectorAll(".btn__add__to__cart");
 
@@ -30,6 +32,7 @@ addToCartBtn.forEach(btn => {
       }
 
       carItems.push(product);
+      calculatorTotal();
       
     });
 });
@@ -51,3 +54,14 @@ function addItemToTheDOM(product) {
 
 };
 
+function calculatorTotal() {
+
+  let total = 0;
+  carItems.forEach( item => {
+    total += item.quantity * item.price;
+  });
+
+  totalCost.innerText = total;
+  totalCounter.innerText = carItems.length;
+
+}
